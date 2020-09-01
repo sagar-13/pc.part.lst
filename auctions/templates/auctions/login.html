@@ -1,0 +1,39 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<h2 class="heading">Login</h2>
+{% if message %}
+<div class="col-12 alert alert alert-danger" role="alert">{{ message }}</div>
+{% endif %}
+
+    <div class="col-12">
+       
+        <div class="offset-sm-2 col-sm-8 alert alert-info offset-sm-2">
+            Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+        </div>
+   
+
+</div>
+
+
+
+  
+
+    <div class="offset-sm-2 col-sm-8 offset-sm-2">
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Login">
+    </form>
+
+    </div>
+
+  
+
+{% endblock %}

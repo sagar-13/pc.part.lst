@@ -1,0 +1,73 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2 class="heading">Watchlist</h2>
+
+
+
+     
+            {% for listing in user.watchlist.all %}
+
+
+                {% if listing.active %}
+                <a class="listing-link" href="{% url 'listing' listing.id %}">
+                    <div class="row">
+                  
+                </div>
+                    <div class="listing card-4 row">   
+                        <div class="inner1 pos1">
+                            <span></span>
+                            <h3>Description</h3>
+                            <p>{{listing.description}}</p>
+                        </div>
+                  
+                        <div class="inner1 pos2">
+                            <span></span>
+                            <h3>Recent Bids</h3>
+                            {% for bid in listing.recent_bids %}
+                            <li>{{ bid }}</li>
+                            {% endfor %}
+                        </div>          
+                        <div class="col-4">
+                            <img class="listing-img" src="{{ listing.url }}"></img>
+                        </div>      
+
+                        <div class="col-6">
+                            <h3 class="listing-title">{{ listing.title }}</h3>
+                              
+                        </div>
+
+                        <div class="col-2">
+                            <h3 class="listing-price">
+                            {% if listing.top_bid %}
+                                ${{ listing.top_bid }}
+                            {% else %}
+                                ${{ listing.starting }}
+                            {% endif %}
+                            </h3>
+
+                        </div>
+
+                        
+
+                        <div class="offset-4 offset-sm-6 offset-md-8 col-8 col-sm-6 col-md-4 ">
+                            <p class="listing-user">in
+                                {{ listing.category }}
+                                by <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                  </svg>
+                                {{ listing.user }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+            {% endfor %}
+    
+ 
+
+   
+
+
+{% endblock %}

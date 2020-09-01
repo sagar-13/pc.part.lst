@@ -1,0 +1,291 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+
+    
+        
+        {% if search %}
+        <h2 class="heading">Results</h2>
+        
+        {% elif category %}
+        <h2 class="heading">"{{category}}" Auctions</h2>
+        {% else %}
+
+    <div class="row">
+        <div class="col-12">
+        
+        </div>
+    <div class="col-9">   
+        <h4 class="heading mt-3">Browse Categories</h2>
+    </div>
+    <div class="col-3">   
+        <a href="{% url 'categories' %}">
+            <button class="btn btn-primary heading mb-3">More...</button>
+        </a>
+
+    </div>
+</div>
+    <div class="swiper-container mb-5">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide row">
+            <div class="col-12">          
+                  <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_3JBIRr.json"  background="transparent"  speed="0.1"  class="lotties" loop  autoplay></lottie-player>
+            </div>
+            <div class="col-12">   
+                
+              
+                    <a href="{% url 'category' category='cpu' %}">
+                        <h4 class="heading">CPU</h5></a>
+          
+                </div>
+          </div>
+          <div class="swiper-slide row">
+            <div class="col=12">           
+                <lottie-player src="https://assets8.lottiefiles.com/temp/lf20_TtN4ps.json"  background="transparent"  speed="0.1"  class="lotties"  loop  autoplay></lottie-player>
+            </div>
+            <div class="col-12">   
+ 
+                    <a href="{% url 'category' category='video-card' %}">
+                        <h4 class="heading">GPU</h5></a>
+     
+            </div>
+        </div>
+          <div class="swiper-slide row">
+            <div class="col-12">       
+                     <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_Cor7HA.json"  background="transparent"  speed="0.1"  class="lotties"  loop  autoplay></lottie-player>
+            </div>
+            <div class="col-12 ">   
+       
+                    <a  href="{% url 'category' category='case-fan' %}">
+                        <h4 class="heading">FANS</h5></a>
+          
+            </div>
+          </div>
+          <div class="swiper-slide row mb-5">
+            <div class="col-12 mb-5">       
+                <svg  class="sliderSVG" viewBox="0 0 512 512" ><g><path d="m71 320c8.284 0 15 6.716 15 15v162c0 8.284-6.716 15-15 15s-15-6.716-15-15v-162c0-8.284 6.716-15 15-15z" fill="#8bb9ff"/><g><path d="m441 192c-8.284 0-15-6.716-15-15v-162c0-8.284 6.716-15 15-15s15 6.716 15 15v162c0 8.284-6.716 15-15 15z" fill="#bceaf9"/><g><path d="m356 482h-60c-8.284 0-15-6.716-15-15v-100c0-8.284 6.716-15 15-15h60c8.284 0 15 6.716 15 15v100c0 8.284-6.716 15-15 15z" fill="#0052be"/><g><g><path d="m281 417v50c0 8.284 6.716 15 15 15h60c8.284 0 15-6.716 15-15v-50z" fill="#00337a"/></g></g><g><path d="m471 192c0-16.844-13.954-30.49-30.908-29.986-16.317.484-29.092 14.3-29.092 30.624v29.362c0 8.284 6.716 15 15 15h30c8.284 0 15-6.716 15-15z" fill="#00337a"/><path d="m411 222v100h-45c-8.284 0-15 6.716-15 15v160c0 8.284 6.716 15 15 15h30c41.355 0 75-33.645 75-75v-215z" fill="#2681ff"/></g><path d="m286 512h-20c-35.841 0-65-29.159-65-65v-60c0-35.841 29.159-65 65-65h20c8.284 0 15 6.716 15 15v160c0 8.284-6.716 15-15 15z" fill="#bceaf9"/></g></g><g><g><path d="m351 417v80c0 8.284 6.716 15 15 15h30c41.355 0 75-33.645 75-75v-20z" fill="#0052be"/><path d="m201 447c0 35.841 29.159 65 65 65h20c8.284 0 15-6.716 15-15v-80h-100z" fill="#8bb9ff"/></g></g><g><g><path d="m156 30h60c8.284 0 15 6.716 15 15v100c0 8.284-6.716 15-15 15h-60c-8.284 0-15-6.716-15-15v-100c0-8.284 6.716-15 15-15z" fill="#0052be"/><g><path d="m141 95v50c0 8.284 6.716 15 15 15h60c8.284 0 15-6.716 15-15v-50z" fill="#00337a"/></g><g><path d="m41 320c0 16.844 13.954 30.49 30.908 29.987 16.317-.485 29.092-14.301 29.092-30.625v-29.362c0-8.284-6.716-15-15-15h-30c-8.284 0-15 6.716-15 15z" fill="#00337a"/><path d="m101 290v-100h45c8.284 0 15-6.716 15-15v-160c0-8.284-6.716-15-15-15h-30c-41.355 0-75 33.645-75 75v215z" fill="#2681ff"/><path d="m41 95v195h60v-100h45c8.284 0 15-6.716 15-15v-80z" fill="#0052be"/></g><path d="m226 0h20c35.841 0 65 29.159 65 65v60c0 35.841-29.159 65-65 65h-20c-8.284 0-15-6.716-15-15v-160c0-8.284 6.716-15 15-15z" fill="#bceaf9"/></g></g><g><path d="m211 95v80c0 8.284 6.716 15 15 15h20c35.841 0 65-29.159 65-65v-30z" fill="#8bb9ff"/></g></g></svg>
+            </div>
+            <div class="col-12 mt-5">   
+       
+                    <a  href="{% url 'category' category='headphones' %}">
+                        <h4 class="heading">HEADPHONES</h5></a>
+          
+            </div>
+          </div>
+          <div class="swiper-slide row">
+            <div class="col-12 mb-5">       
+            <svg  viewBox="0 0 512 512" class="sliderSVG"><g><g><path d="m229.984 379.837h52.033v104.065h-52.033z" fill="#453d81" transform="matrix(0 1 -1 0 687.87 175.87)"/><path d="m360.065 489.21v-14.55c0-3.902-2.205-7.469-5.695-9.214l-10.768-5.384c-2.861-1.43-6.016-2.175-9.214-2.175h-156.776c-3.199 0-6.353.745-9.214 2.175l-10.768 5.384c-3.49 1.745-5.695 5.312-5.695 9.214v14.551c0 5.69 4.612 10.302 10.302 10.302h187.526c5.69-.001 10.302-4.613 10.302-10.303z" fill="#5e54ac"/><path d="m334.388 457.886h-24.274l9.308 4.654c7.051 3.526 11.505 10.732 11.505 18.616v18.356h18.836c5.69 0 10.302-4.612 10.302-10.302v-14.55c0-3.902-2.205-7.469-5.695-9.214l-10.768-5.384c-2.861-1.431-6.015-2.176-9.214-2.176z" fill="#524798"/></g><g><path d="m501.698 405.854h-491.396c-5.69 0-10.302-4.613-10.302-10.302v-372.762c0-5.69 4.612-10.302 10.302-10.302h491.396c5.69 0 10.302 4.612 10.302 10.302v372.762c0 5.689-4.612 10.302-10.302 10.302z" fill="#5e54ac"/><path d="m501.698 12.488h-12.592v393.366h12.592c5.69 0 10.302-4.612 10.302-10.302v-372.762c0-5.69-4.612-10.302-10.302-10.302z" fill="#524798"/><path d="m35.382 328.95v-270.778c0-5.69 4.612-10.302 10.302-10.302h420.632c5.69 0 10.302 4.612 10.302 10.302v270.778c0 5.69-4.612 10.302-10.302 10.302h-420.632c-5.69 0-10.302-4.612-10.302-10.302z" fill="#9dc6fb"/><g><path d="m417.198 47.87c9.491 25.963 14.672 54.002 14.672 83.252 0 88.416-47.331 165.768-118.03 208.13h152.476c5.69 0 10.302-4.612 10.302-10.302v-270.778c0-5.69-4.612-10.302-10.302-10.302z" fill="#80b4fb"/></g></g><g><g><path d="m468.892 380.279h-20.813c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h20.813c4.268 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726z" fill="#df75a5"/></g><g><path d="m414.778 380.279h-20.813c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h20.813c4.268 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726z" fill="#ffe07d"/></g><g><path d="m360.664 380.279h-20.813c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h20.813c4.268 0 7.726 3.459 7.726 7.726.001 4.267-3.458 7.726-7.726 7.726z" fill="#95d6a4"/></g></g></g></svg>    
+            </div>
+            <div class="col-12 mt-5">   
+       
+                    <a  href="{% url 'category' category='monitor' %}">
+                        <h4 class="heading">MONITORS</h5></a>
+          
+            </div>
+          </div>
+          <div class="swiper-slide row">
+            <div class="col-12 mb-5">       
+                <svg class="sliderSVG" viewBox="0 0 512 512" xml:space="preserve">
+                    <rect x="7.5" y="193.56" style="fill:#C6C5CA;" width="497" height="252.03"/>
+                    <g>
+                        <rect x="67.67" y="238.13" style="fill:#898890;" width="37.879" height="37.879"/>
+                        <rect x="143.42" y="238.13" style="fill:#898890;" width="189.4" height="37.879"/>
+                        <rect x="67.67" y="304.4" style="fill:#898890;" width="265.15" height="75.76"/>
+                        <rect x="67.67" y="380.16" style="fill:#898890;" width="37.879" height="37.879"/>
+                        <rect x="105.55" y="380.16" style="fill:#898890;" width="151.51" height="37.879"/>
+                        <rect x="257.06" y="380.16" style="fill:#898890;" width="75.76" height="37.879"/>
+                        <rect x="370.7" y="238.13" style="fill:#898890;" width="113.3" height="73.77"/>
+                        <rect x="408.41" y="342.28" style="fill:#898890;" width="37.879" height="37.879"/>
+                        <rect x="370.7" y="380.16" style="fill:#898890;" width="113.3" height="37.879"/>
+                    </g>
+                    <g>
+                        <rect x="47.671" y="238.13" style="fill:#FFB655;" width="37.879" height="37.879"/>
+                        <rect x="123.42" y="238.13" style="fill:#FFB655;" width="189.4" height="37.879"/>
+                    </g>
+                    <g>
+                        <rect x="47.666" y="304.4" style="fill:#57A4FF;" width="265.15" height="75.76"/>
+                        <rect x="47.666" y="380.16" style="fill:#57A4FF;" width="37.879" height="37.879"/>
+                    </g>
+                    <rect x="85.55" y="380.16" style="fill:#FF3F62;" width="151.51" height="37.879"/>
+                    <rect x="237.06" y="380.16" style="fill:#57A4FF;" width="75.76" height="37.879"/>
+                    <rect x="350.7" y="238.13" style="fill:#FF3F62;" width="113.3" height="73.77"/>
+                    <g>
+                        <rect x="388.41" y="342.28" style="fill:#A7ADF0;" width="37.879" height="37.879"/>
+                        <rect x="350.7" y="380.16" style="fill:#A7ADF0;" width="113.3" height="37.879"/>
+                    </g>
+                    <g>
+                        <rect x="47.671" y="238.13" style="fill:#EE8700;" width="20" height="37.879"/>
+                        <rect x="123.42" y="238.13" style="fill:#EE8700;" width="18.801" height="37.879"/>
+                    </g>
+                    <g>
+                        <rect x="47.666" y="304.4" style="fill:#006DF0;" width="20" height="75.76"/>
+                        <rect x="47.666" y="380.16" style="fill:#006DF0;" width="20" height="37.879"/>
+                    </g>
+                    <rect x="85.55" y="380.16" style="fill:#A5001E;" width="20" height="37.879"/>
+                    <rect x="237.06" y="380.16" style="fill:#006DF0;" width="20" height="37.879"/>
+                    <rect x="350.7" y="238.13" style="fill:#A5001E;" width="20" height="73.77"/>
+                    <g>
+                        <rect x="388.41" y="342.28" style="fill:#7C84E8;" width="20" height="37.879"/>
+                        <rect x="350.7" y="380.16" style="fill:#7C84E8;" width="20" height="37.879"/>
+                    </g>
+                    <rect x="7.5" y="193.56" style="fill:#898890;" width="30" height="252.03"/>
+                    <g>
+                        <rect x="22.09" y="207.58" style="fill:#FFFFFF;" width="15" height="15"/>
+                        <rect x="47.09" y="207.58" style="fill:#FFFFFF;" width="15" height="15"/>
+                        <rect x="72.09" y="207.58" style="fill:#FFFFFF;" width="83.21" height="15"/>
+                        <rect x="184.91" y="391.6" style="fill:#FFFFFF;" width="15" height="15"/>
+                        <rect x="115.67" y="391.6" style="fill:#FFFFFF;" width="59.24" height="15"/>
+                        <rect x="209.91" y="391.6" style="fill:#FFFFFF;" width="15" height="15"/>
+                        <rect x="476.83" y="301.95" style="fill:#FFFFFF;" width="15" height="70.64"/>
+                        <rect x="476.83" y="407.58" style="fill:#FFFFFF;" width="15" height="15"/>
+                        <rect x="476.83" y="382.58" style="fill:#FFFFFF;" width="15" height="15"/>
+                    </g>
+                    <g>
+                        <rect x="456.5" y="208.58" style="fill:#1D1D1F;" width="15" height="15"/>
+                        <rect x="406.5" y="208.58" style="fill:#1D1D1F;" width="14.999" height="15"/>
+                        <rect x="431.5" y="208.58" style="fill:#1D1D1F;" width="15" height="15"/>
+                        <polygon style="fill:#1D1D1F;" points="388.473,186.057 388.473,201.057 497,201.057 497,438.083 15,438.083 15,392.583 0,392.583    0,453.083 512,453.083 512,186.057  "/>
+                        <polygon style="fill:#1D1D1F;" points="15,201.057 373.473,201.057 373.473,186.057 263.5,186.057 263.5,178.556 248.5,178.556    248.5,186.057 0,186.057 0,377.583 15,377.583  "/>
+                        <path style="fill:#1D1D1F;" d="M40.17,283.51h52.88v-52.88H40.22L40.17,283.51z M55.17,245.63h22.87v22.88H55.17V245.63z"/>
+                        <path style="fill:#1D1D1F;" d="M320.32,230.63h-90.76v0.036l-22.88-0.022v-0.014h-90.76v52.88h90.76v-0.036l37.88,0.036v-0.036   l22.88,0.022v0.014h52.88V230.63z M153.8,268.51h-22.88v-22.88h22.88V268.51z M168.8,245.63h22.88v22.88H168.8V245.63z    M206.68,245.63h22.88v22.88h-22.88V245.63z M267.44,268.51h-22.88v-22.88h22.88V268.51z M305.32,268.51h-22.88v-22.88h22.88   V268.51z"/>
+                        <path style="fill:#1D1D1F;" d="M343.2,230.63v90.75h128.63v-90.7l-37.88-0.036v-0.014H343.2z M358.2,245.63h22.87v22.88H358.2   V245.63z M381.07,306.38H358.2v-22.87h22.87V306.38z M418.95,306.38h-22.87v-22.87h22.87V306.38z M456.83,306.38h-22.88v-22.87   h22.88V306.38z M456.83,245.63v22.88h-22.88v-22.88H456.83z M418.95,245.63v22.88h-22.87v-22.88H418.95z"/>
+                        <path style="fill:#1D1D1F;" d="M433.95,334.83l-52.87-0.05v37.88H343.2v52.88h52.88v-0.036l37.87,0.036v-0.036l37.88,0.036v-52.83   l-37.88-0.036V334.83z M381.07,410.54H358.2v-22.88h22.87V410.54z M396.08,387.66h22.87v22.88h-22.87V387.66z M456.83,387.66v22.88   h-22.88v-22.88H456.83z M396.07,372.66v-22.88h22.88v22.88H396.07z"/>
+                        <path style="fill:#1D1D1F;" d="M282.44,425.54v-0.036l37.88,0.036V296.95l-52.88-0.05v0.036l-37.88-0.036v0.036l-22.88-0.022V296.9   H153.8v0.036l-37.88-0.036v0.036l-22.87-0.022V296.9H40.22l-0.05,52.88h0.036l-0.036,37.88h0.036l-0.036,37.88h52.88v-0.045   l136.51,0.041v0.005L282.44,425.54L282.44,425.54z M206.68,349.781h22.88v22.88h-22.88V349.781z M267.44,372.66h-22.88v-22.88   h22.88V372.66z M282.44,349.781h22.88v22.88h-22.88V349.781z M191.68,372.66H168.8v-22.88h22.88L191.68,372.66L191.68,372.66z    M130.92,349.781h22.88v22.88h-22.88V349.781z M93.05,349.781h22.87v22.88H93.05V349.781z M244.56,387.66h22.88v22.88h-22.88   V387.66z M305.32,410.54h-22.88v-22.88h22.88V410.54z M305.32,334.781h-22.88V311.9h22.88V334.781z M267.44,334.781h-22.88V311.9   h22.88V334.781z M229.56,311.9v22.88h-22.88V311.9H229.56z M191.68,334.781H168.8V311.9h22.88L191.68,334.781L191.68,334.781z    M153.8,334.781h-22.88V311.9h22.88V334.781z M115.92,311.9v22.88H93.05V311.9H115.92z M55.17,311.9h22.87v22.88H55.17V311.9z    M78.04,349.781v22.88H55.17v-22.88H78.04z M78.04,410.54H55.17v-22.88h22.87V410.54z M93.05,410.54v-22.88h136.51v22.88H93.05z"/>
+                        <polygon style="fill:#1D1D1F;" points="19.83,413.6 34.83,413.6 34.83,361.17 19.88,361.17  "/>
+                        <rect x="248.5" y="153.56" style="fill:#1D1D1F;" width="15" height="15"/>
+                        <polygon style="fill:#1D1D1F;" points="263.5,130.083 339.946,130.083 339.946,58.917 324.946,58.917 324.946,115.083    248.5,115.083 248.5,143.556 263.5,143.556  "/>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg></div>
+            <div class="col-12 mt-5">   
+       
+                    <a  href="{% url 'category' category='keyboard' %}">
+                        <h4 class="heading">KEYBOARDS</h5></a>
+          
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <div class="row">
+          <div class="col-8">
+            <h2 class="heading">Active Auctions</h2>
+
+          </div>
+          <div class="col-4 hover-info">
+              
+            <h5><span class="dot descp-dot"></span>Item Description</h5>
+            <h5> <span class="dot bids-dot"></span>Recent Bids</h5>
+              
+        </div>
+      </div>
+       
+
+        
+        {% endif %}
+            
+     
+
+    {% if listings %}
+     
+            {% for listing in listings %}
+
+
+                {% if listing.active %}
+                <a class="listing-link" href="{% url 'listing' listing.id %}">
+                    <div class="row">
+                  
+                </div>
+                    <div class="listing card-4 row">   
+              
+                        <div class="inner1 pos1">
+              
+                            <h6 class="font1">{{listing.title}}</h6>
+                            <p>{{listing.description}}</p>
+                        </div>
+                   
+                        <div class="inner1 pos2">
+                            
+                            <h6 class="font1">Recent Bids </h6>
+                             
+                            <p>
+                            {% for bid in listing.recent_bids %}
+                            ${{ bid }} <br>
+                            {% endfor %}
+                        </p>
+                        </div>          
+                        <div class="col-4">
+                            <img class="listing-img" src="{{ listing.url }}"></img>
+                        </div>      
+
+                        <div class="col-6">
+                            <h3 class="listing-title">{{ listing.title }}</h3>
+                              
+                        </div>
+
+                        <div class="col-2">
+                            <h3 class="listing-price">
+                                
+                            {% if listing.top_bid %}
+                                ${{ listing.top_bid }}
+                            {% else %}
+                                ${{ listing.starting }}
+                            {% endif %}
+                            </h3>
+
+                        </div>
+
+                        
+
+                        <div class="offset-4 offset-sm-6 offset-md-8 col-8 col-sm-6 col-md-4 ">
+                            <p class="listing-user">in
+                                {{ listing.category }}
+                                by <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                  </svg>
+                                {{ listing.user }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+            {% endfor %}
+    
+    {% endif %}
+{% endblock %}
